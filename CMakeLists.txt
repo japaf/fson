@@ -18,7 +18,7 @@ set(INSTALL_LIB_DIR     lib     CACHE PATH "Library install directories")
 set(INSTALL_BIN_DIR     bin     CACHE PATH "Executables install directories")
 set(INSTALL_INCLUDE_DIR include CACHE PATH "Header files install directory")
 
-# Make relative paths absilute
+# Make relative paths absolute
 foreach(p LIB BIN INCLUDE CMAKE)
   set(var INSTALL_${p}_DIR)
   if(NOT IS_ABSOLUTE "${${var}}")
