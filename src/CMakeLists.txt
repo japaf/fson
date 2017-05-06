@@ -6,13 +6,7 @@ set (CMAKE_Fortran_MODULE_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/mod)
 
 add_library(fson SHARED ${SRCFiles})
 
-# --------------------------------------------------------------------------- #
-# Generate Configuration Files
-# --------------------------------------------------------------------------- #
-
-# configure_file("${CMAKE_CURRENT_SOURCE_DIR}/libfson.pc.in" "${CMAKE_CURRENT_BINARY_DIR}/libfson.pc" @ONLY)
-
-
+# install library
 install(
 	TARGETS fson
 	EXPORT FSONTargets
@@ -21,13 +15,9 @@ install(
 	ARCHIVE DESTINATION "${INSTALL_LIB_DIR}/static"
 	PUBLIC_HEADER DESTINATION "${INSTALL_INCLUDE_DIR}/${PROJECT_NAME}"
 )
+
+# install fortran module files (note the trailing "/" after module directory)
 install(
-	DIRECTORY ${CMAKE_Fortran_MODULE_DIRECTORY}
+	DIRECTORY ${CMAKE_Fortran_MODULE_DIRECTORY}/
 	DESTINATION "${INSTALL_INCLUDE_DIR}/${PROJECT_NAME}"
 )
-
-
-# install(FILES "${CMAKE_CURRENT_BINARY_DIR}/libfson.pc" DESTINATION "${INSTALL_LIB_DIR}/pkgconfig")
-
-# install(CODE "EXECUTE_PROCESS (COMMAND \"${CMAKE_COMMAND}\" -E copy_directory \"${CMAKE_Fortran_MODULE_DIRECTORY}\" \"${INSTALL_INCLUDE_DIR}/${PROJECT_NAME}\" )" )
-
