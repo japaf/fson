@@ -97,6 +97,6 @@ install(
 
 # Install the export set for use with the install-tree
 install(
-  EXPORT FSONTargets DESTINATION
-  "${INSTALL_CMAKE_DIR}"
+  EXPORT FSONTargets
+  DESTINATION "${INSTALL_CMAKE_DIR}"
 )
