@@ -13,15 +13,4 @@ cmake --build .
 cmake --build . --target install
 ```
 
-Verify that the library and include files can be found:
-
-```
-export PKG_CONFIG_PATH=${HOME}/lib/pkgconfig
-pkg-config --cflags --libs libfson
-```
-Expect output similar to:
-```
--I/home/advsim/include/fson -L/home/advsim/lib/fson -lfson
-```
-
 Fin.
