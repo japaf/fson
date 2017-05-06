@@ -14,9 +14,18 @@ project (fson VERSION 1.0 LANGUAGES Fortran)
 
 set(CMAKE_INSTALL_PREFIX $ENV{HOME})# Install in user-space
 
-set(INSTALL_LIB_DIR     lib     CACHE PATH "Library install directories")
-set(INSTALL_BIN_DIR     bin     CACHE PATH "Executables install directories")
-set(INSTALL_INCLUDE_DIR include CACHE PATH "Header files install directory")
+set(
+  INSTALL_LIB_DIR lib/${PROJECT_NAME}
+  CACHE PATH "Library install directories"
+)
+set(
+  INSTALL_BIN_DIR bin
+  CACHE PATH "Executables install directories"
+)
+set(
+  INSTALL_INCLUDE_DIR include/${PROJECT_NAME}
+  CACHE PATH "Header files install directory"
+)
 if(WIN32 AND NOT CYGWIN)
   set(DEF_INSTALL_CMAKE_DIR CMake)
 else()

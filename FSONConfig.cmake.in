@@ -14,4 +14,4 @@ endif()
  
 # These are IMPORTED targets created by FSONTargets.cmake
 set(FSON_LIBRARIES fson)
-# set(FSON_EXECUTABLE bar) # no executable in this project
+# set(FSON_EXECUTABLE bar) # no executables in this project
