@@ -1,0 +1,17 @@
+# It defines the following variables
+#  PROJECT_INCLUDE_DIRS - include directories for the project
+#  PROJECT_LIBRARIES    - libraries to link against
+#  PROJECT_EXECUTABLE   - the executables
+
+# Compute paths
+get_filename_component(FSON_CMAKE_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
+set(FSON_INCLUDE_DIRS "@CONF_INCLUDE_DIRS@")
+ 
+# Our library dependencies (contains definitions for IMPORTED targets)
+if(NOT TARGET fson AND NOT FSON_BINARY_DIR)
+  include("${FSON_CMAKE_DIR}/FSONTargets.cmake")
+endif()
+ 
+# These are IMPORTED targets created by FSONTargets.cmake
+set(FSON_LIBRARIES fson)
+# set(FSON_EXECUTABLE bar) # no executable in this project
