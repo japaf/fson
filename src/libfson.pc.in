@@ -1,9 +1,10 @@
 libdir=@INSTALL_LIB_DIR@
 includedir=@INSTALL_INCLUDE_DIR@
+name=@PROJECT_NAME@
 
 Name: @CMAKE_PROJECT_NAME@
 Description: Fortran 95 JSON Parser
 URL: https://github.com/japaf/fson
 Version: @PACKAGE_VERSION@
-Libs: -L${libdir} -lfson
+Libs: -L${libdir} -l${name}
 Cflags: -I${includedir}
