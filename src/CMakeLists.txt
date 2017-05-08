@@ -31,5 +31,5 @@ install(
 # install pkg-config
 install(
 	FILES "${CMAKE_CURRENT_BINARY_DIR}/libfson.pc"
-	DESTINATION "${INSTALL_LIB_DIR}/pkgconfig"
+	DESTINATION "${INSTALL_PKGCONFIG_DIR}"
 )
