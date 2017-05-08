@@ -6,6 +6,12 @@ set (CMAKE_Fortran_MODULE_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/mod)
 
 add_library(fson SHARED ${SRCFiles})
 
+# configure pkg-config
+configure_file(
+	"${CMAKE_CURRENT_SOURCE_DIR}/libfson.pc.in"
+	"${CMAKE_CURRENT_BINARY_DIR}/libfson.pc" @ONLY
+)
+
 # install library
 install(
 	TARGETS fson
@@ -20,4 +26,10 @@ install(
 install(
 	DIRECTORY ${CMAKE_Fortran_MODULE_DIRECTORY}/
 	DESTINATION "${INSTALL_INCLUDE_DIR}"
+)
+
+# install pkg-config
+install(
+	FILES "${CMAKE_CURRENT_BINARY_DIR}/libfson.pc"
+	DESTINATION "${INSTALL_LIB_DIR}/pkgconfig"
 )
